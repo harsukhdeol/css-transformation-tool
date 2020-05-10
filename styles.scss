@@ -1,0 +1,64 @@
+
+$colors:(
+    front: #005Dff,
+    back:yellow,
+    right:green,
+    left:red,
+    top:purple,
+    bottom:orange);
+   
+
+ @function color($color-name){
+    @return map-get($colors, $color-name)
+ }
+
+.container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    perspective: 1000;
+  }
+  #cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+   transform-style: preserve-3d;
+   transform:translateZ(-100px) ;
+   
+  }
+  #cube figure {
+    width: 196px;
+    height: 196px;
+    display: block;
+    position: absolute;
+    border: 2px solid black;
+    color:white;opacity: 0.5;
+    line-height: 196px;
+    text-align: center;
+    font-size: 2rem;
+  }
+   .front { 
+        
+        transform: rotateY(0deg) translateZ(100px);
+        background-color: color(front);
+     }
+ .back {
+       transform: rotateX(180deg) translateZ(100px);
+       background-color: color(back);
+     }
+ .right {
+       transform: rotateY(90deg)translateZ(100px);
+       background-color: color(right);
+    }
+ .left { 
+      transform: rotateY(-90deg)translateZ(100px);
+      background-color: color(left);
+     }
+ .top { 
+      transform: rotateX(90deg)translateZ(100px);
+      background-color: color(top);
+     }
+ .bottom {
+       transform: rotateX(-90deg) translateZ(100px);
+       background-color: color(bottom);
+     }
